@@ -1,11 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Module03_Pract;
+
 using Module03_Pract.Delivery;
-using Module03_Pract.Payment;
+
+namespace Module03_Pract;
 
 internal class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Product product1 = new Product();
         Product product2 = new Product();
@@ -18,7 +19,7 @@ internal class Program
         
         Console.WriteLine($"Select method of delivery(1-courier, 2-post, 3-PickUpPoint): ");
         int choice = Convert.ToInt32(Console.ReadLine());
-        IDelivery delivery = null;
+        IDelivery? delivery = null;
         switch (choice)
         {
             case 1:
@@ -34,9 +35,9 @@ internal class Program
                 Console.WriteLine("Invalid choice.");
                 break;
         }
-        delivery.ProcessDelivery(order);
+        delivery?.ProcessDelivery(order);
 
-        IPayment payment = new CreditCard();
+        //IPayment payment = new CreditCard();
 
     }
 }
