@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
 using Module03_Pract;
+using Module03_Pract.Delivery;
+using Module03_Pract.Payment;
 
 internal class Program
 {
@@ -34,5 +35,8 @@ internal class Program
                 break;
         }
         delivery.ProcessDelivery(order);
+
+        IPayment payment = new CreditCard();
+
     }
 }
